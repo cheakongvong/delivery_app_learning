@@ -20,58 +20,62 @@ class RecentOrder extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Row(
-            children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(15.0),
-                child: Image(
-                  height: 100.0,
-                  width: 100.0,
-                  image: AssetImage(order.food.imageUrl),
-                  fit: BoxFit.cover,
-                  // image: AssetImage(order.food.imageUrl),
+          Expanded(
+            child: Row(
+              children: [
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(15.0),
+                  child: Image(
+                    height: 100.0,
+                    width: 100.0,
+                    image: AssetImage(order.food.imageUrl),
+                    fit: BoxFit.cover,
+                    // image: AssetImage(order.food.imageUrl),
+                  ),
                 ),
-              ),
-              Container(
-                margin: const EdgeInsets.all(12.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      order.food.name,
-                      style: const TextStyle(
-                          fontFamily: 'Poppins',
-                          fontSize: 18.0,
-                          fontWeight: FontWeight.bold),
-                      overflow: TextOverflow.ellipsis,
+                Expanded(
+                  child: Container(
+                    margin: const EdgeInsets.all(12.0),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          order.food.name,
+                          style: const TextStyle(
+                              fontFamily: 'Poppins',
+                              fontSize: 18.0,
+                              fontWeight: FontWeight.bold),
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                        const SizedBox(
+                          height: 2.0,
+                        ),
+                        Text(
+                          order.restaurant.name,
+                          style: const TextStyle(
+                              fontFamily: 'Poppins',
+                              fontSize: 13.0,
+                              fontWeight: FontWeight.w500),
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                        const SizedBox(
+                          height: 2.0,
+                        ),
+                        Text(
+                          order.date,
+                          style: const TextStyle(
+                              fontFamily: 'Poppins',
+                              fontSize: 13.0,
+                              fontWeight: FontWeight.w500),
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ],
                     ),
-                    const SizedBox(
-                      height: 2.0,
-                    ),
-                    Text(
-                      order.restaurant.name,
-                      style: const TextStyle(
-                          fontFamily: 'Poppins',
-                          fontSize: 13.0,
-                          fontWeight: FontWeight.w500),
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                    const SizedBox(
-                      height: 2.0,
-                    ),
-                    Text(
-                      order.date,
-                      style: const TextStyle(
-                          fontFamily: 'Poppins',
-                          fontSize: 13.0,
-                          fontWeight: FontWeight.w500),
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                  ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
           Container(
             margin: const EdgeInsets.only(right: 20.0),
